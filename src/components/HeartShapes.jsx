@@ -222,7 +222,7 @@ const HeartCompo = () => {
               alt="Card icon"
               width="100"
               height="50"
-              className="flex-1"
+              className=""
             />
           </div>
         ))}
