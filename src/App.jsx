@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import MyComponent from "./components/HeartShapes";
 import GraphFirst from "./components/GraphFirst";
 import GraphSec from "./components/GraphSec";
@@ -9,7 +9,7 @@ import NotFound from "./components/NotFound"; // Add a NotFound component
 
 function App() {
   return (
-    <Router basename="/Graphs"> {/* Ensure basename matches your GitHub Pages URL */}
+    <Router>
       <Routes>
         <Route path="/" element={<MyComponent />} />
         <Route path="/health" element={<GraphFirst />} />
@@ -24,3 +24,4 @@ function App() {
 }
 
 export default App;
+console.log('App is rendering...');
