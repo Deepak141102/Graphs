@@ -128,7 +128,7 @@ const HeartCompo = () => {
   <image href="heart-model.jpeg" style={{ width: "2742px" }} />
   {quickLink.map((item, ind) => {
     return (
-      <Link key={ind} to={item.href} target="_blank" title={item.title}>
+      <Link key={ind} to={item.href}  title={item.title}>
         <g>
           <polygon
             className="image-mapper-shape"
