@@ -261,7 +261,7 @@ const GraphThird = () => {
             </div>
           </div>
 
-          <div className="flex items-center ml-10 mt-9 relative flex-col w-1/2 max-md:w-full ">
+          <div className="flex items-center  mt-9 relative flex-col w-1/2 max-md:w-full ">
             <FontAwesomeIcon
               icon={faFilter}
               className="absolute top-0 right-0 max-md:right-2 max-md:text-2xl text-purple-400 text-lg cursor-pointer mr-2 hover:text-purple-600 transition-all duration-300"
