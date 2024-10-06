@@ -1,7 +1,8 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
+import { plugins } from 'chart.js';
 
-// https://vitejs.dev/config/
 export default defineConfig({
+  base: '/Graphs/', // Replace 'Graphs' with your repository name
   plugins: [react()],
-})
+});
