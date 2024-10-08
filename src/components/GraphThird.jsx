@@ -237,7 +237,7 @@ const GraphThird = () => {
           <div className="flex items-center  mt-9 relative flex-col w-1/3 max-md:w-full">
             <FontAwesomeIcon
               icon={faFilter}
-              className=" absolute -top-9 right-0 max-md:right-2 max-md:text-2xl text-purple-400 text-lg cursor-pointer my-12 hover:text-purple-600 transition-all duration-300"
+              className=" absolute -top-[3.10rem] right-0 max-md:right-2 max-md:text-2xl text-purple-400 text-lg cursor-pointer my-12 hover:text-purple-600 transition-all duration-300"
               onClick={() => setPieDropdownOpen(!isPieDropdownOpen)} // Toggle dropdown
             />
             {isPieDropdownOpen && (

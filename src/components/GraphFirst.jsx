@@ -112,32 +112,85 @@ const GraphFirst = () => {
   };
 
   // Radar chart data
-  const radarData = {
-    labels: ["Delhi", "UP", "Bihar", "Kerala", "Punjab"],
-    datasets: [
-      {
-        label: "Children Enrollment",
-        data: filteredRadarData.length ? filteredRadarData[0] : [0, 0, 0, 0, 0],
-        backgroundColor: "rgba(0, 255, 255, 0.5)",
-        borderColor: "#00ffcc",
-        borderWidth: 2,
+const radarData = {
+  labels: ["Delhi", "UP", "Bihar", "Kerala", "Punjab"],
+  datasets: [
+    {
+      label: "Children Enrollment",
+      data: filteredRadarData.length ? filteredRadarData[0] : [0, 0, 0, 0, 0],
+      backgroundColor: "rgba(0, 255, 255, 0.5)",
+      borderColor: "#00ffcc",
+      borderWidth: 2,
+    },
+  ],
+};
+
+// Radar chart options (for white spider lines)
+const radarOptions = {
+  scales: {
+    r: {
+      grid: {
+        color: "white", // Set spider lines (grid lines) to white
       },
-    ],
-  };
+      angleLines: {
+        color: "white", // Set the angle lines (radial lines) to white
+      },
+      pointLabels: {
+        color: "white", // Set the labels (around the chart) to white
+      },
+    },
+  },
+};
 
   // Bar chart data
-  const barData = {
-    labels: ["Delhi", "UP", "Bihar", "Kerala", "Punjab"],
-    datasets: [
-      {
-        label: "Total Children Enrolled",
-        data: filteredBarData.length ? filteredBarData[0] : [0, 0, 0, 0, 0],
-        backgroundColor: "rgba(255, 0, 102, 0.7)",
-        borderColor: "#ff0066",
-        borderWidth: 2,
+const barData = {
+  labels: ["Delhi", "UP", "Bihar", "Kerala", "Punjab"],
+  datasets: [
+    {
+      label: "Total Children Enrolled",
+      data: filteredBarData.length ? filteredBarData[0] : [0, 0, 0, 0, 0],
+      backgroundColor: "rgba(255, 0, 102, 0.7)", // Bar color
+      borderColor: "#ff0066", // Border color of bars
+      borderWidth: 2, // Thickness of bar borders
+    },
+  ],
+};
+
+// Bar chart options (for customizing grid lines, axes, etc.)
+const barOptions = {
+  scales: {
+    x: {
+      grid: {
+        color: "white",     // Set X-axis grid lines to white
+        lineWidth: 0.2,     // Make X-axis grid lines thinner
       },
-    ],
-  };
+      border: {
+        color: "white",     // X-axis border line color
+        width: 1,           // Thinner X-axis border line
+      },
+      ticks: {
+        color: "white",     // X-axis labels color
+      },
+    },
+    y: {
+      grid: {
+        color: "white",     // Set Y-axis grid lines to white
+        lineWidth: 0.2,     // Make Y-axis grid lines thinner
+      },
+      border: {
+        color: "white",     // Y-axis border line color
+        width: 1,           // Thinner Y-axis border line
+      },
+      ticks: {
+        color: "white",     // Y-axis labels color
+      },
+    },
+  },
+};
+
+
+  
+  
 
   // Line chart data
   const lineData = {
@@ -153,6 +206,38 @@ const GraphFirst = () => {
       },
     ],
   };
+
+  const lineOptions = {
+    scales: {
+      x: {
+        grid: {
+          color: "white",     // Set X-axis grid lines to white
+          lineWidth: 0.2,     // Make X-axis grid lines thinner
+        },
+        border: {
+          color: "white",     // X-axis border line color
+          width: 1,           // Thinner X-axis border line
+        },
+        ticks: {
+          color: "white",     // X-axis labels color
+        },
+      },
+      y: {
+        grid: {
+          color: "white",     // Set Y-axis grid lines to white
+          lineWidth: 0.2,     // Make Y-axis grid lines thinner
+        },
+        border: {
+          color: "white",     // Y-axis border line color
+          width: 1,           // Thinner Y-axis border line
+        },
+        ticks: {
+          color: "white",     // Y-axis labels color
+        },
+      },
+    },
+  };
+  
 
   return (
     <div className=" bg-frameImg bg-no-repeat bg-fixed bg-cover bg-bottom">
@@ -192,9 +277,9 @@ const GraphFirst = () => {
           <div className="flex justify-between items-center text-center mt-7  mx-6 flex-wrap max-md:flex-col max-md:m-0 ">
             <div className="ml-5 flex items-center text-white max-md:mb-5 max-md:mx-0">
               <FontAwesomeIcon icon={faFilter} className="mr-3" />
-              <label className="max-md:text-2xl">Start Year:</label>
+              <label className="max-md:text-lg">Start Year:</label>
               <select
-                className="ml-2 p-2 rounded-md border-none bg-[#131a48] text-[#fff] max-md:px-10 max-md:py-5 max-md:text-2xl"
+                className="ml-2 p-2 rounded-md border-none bg-[#131a48] text-[#fff] max-md:px-1 max-md:py-1 max-md:text-base"
                 value={startYear}
                 onChange={(e) => setStartYear(Number(e.target.value))}
               >
@@ -207,10 +292,10 @@ const GraphFirst = () => {
             </div>
 
             <div className="flex items-center text-white">
-              <FontAwesomeIcon icon={faFilter} className=" mr-3 text-white" />
-              <label className="max-md:text-2xl">End Year:</label>
+              <FontAwesomeIcon icon={faFilter} className=" mr-4 text-white" />
+              <label className="max-md:text-lg">End Year:</label>
               <select
-                className="ml-2 p-2 rounded-md border-none bg-[#131a48] text-[#fff] max-md:px-10 max-md:py-5 max-md:text-2xl"
+                className="ml-2 p-2 rounded-md border-none bg-[#131a48] text-[#fff] max-md:px-1 max-md:py-1 max-md:text-base"
                 value={endYear}
                 onChange={(e) => setEndYear(Number(e.target.value))}
               >
@@ -238,7 +323,7 @@ const GraphFirst = () => {
               <h2 className="font-semibold text-white my-8 bg-slate-600 bg-opacity-20 rounded-md p-3">
                 Children Enrollment Analysis
               </h2>
-              <Radar data={radarData} />
+              <Radar data={radarData} options={radarOptions} />
             </div>
 
             {/* Bar Chart */}
@@ -246,7 +331,7 @@ const GraphFirst = () => {
               <h2 className="font-semibold text-white my-8 bg-slate-600 bg-opacity-20 rounded-md p-3">
                 Total Children Enrolled
               </h2>
-              <Bar data={barData} />
+              <Bar data={barData} options={barOptions} />
             </div>
 
             {/* Line Chart */}
@@ -254,7 +339,7 @@ const GraphFirst = () => {
               <h2 className="font-semibold text-white my-8 bg-slate-600 bg-opacity-20 rounded-md p-3">
                 Monthly Enrollments
               </h2>
-              <Line data={lineData} />
+              <Line data={lineData} options={lineOptions} />
             </div>
           </div>
         </div>

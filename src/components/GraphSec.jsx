@@ -205,7 +205,7 @@ const GraphSec = () => {
               />
               <label className="max-md:text-2xl">Start Year:</label>
               <select
-                className="ml-2 p-2 rounded-md border-none bg-[#131a48] text-[#fff] max-md:px-10 max-md:py-5 max-md:text-2xl"
+                className="ml-2 p-2 rounded-md border-none bg-[#131a48] text-[#fff] max-md:px-4 max-md:py-1 max-md:text-2xl"
                 value={startYear}
                 onChange={(e) => setStartYear(Number(e.target.value))}
               >
@@ -226,7 +226,7 @@ const GraphSec = () => {
               />
               <label className="max-md:text-2xl">End Year:</label>
               <select
-                className="ml-2 p-2 rounded-md border-none bg-[#131a48] text-[#fff] max-md:px-10 max-md:py-5 max-md:text-2xl"
+                className="ml-2 p-2 rounded-md border-none bg-[#131a48] text-[#fff] max-md:px-4 max-md:py-1 max-md:text-2xl"
                 value={endYear}
                 onChange={(e) => setEndYear(Number(e.target.value))}
               >
